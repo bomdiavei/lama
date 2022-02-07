@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { animateScroll as scroll } from 'react-scroll'
 
 import { mobile } from '../responsive'
 
@@ -43,13 +45,20 @@ const Button = styled.button`
 `
 
 const CategoryItem = ({ item }) => {
+
+    const toggleHome = () => {
+        scroll.scrollToTop()
+    }
+
     return (
         <Container>
-            <Image src={item.img} />
-            <Info>
-                <Title>{item.title}</Title>
-                <Button>SHOP NOW</Button>
-            </Info>
+            <Link to="/products" onClick={toggleHome}>
+                <Image src={item.img} />
+                <Info>
+                    <Title>{item.title}</Title>
+                    <Button>SHOP NOW</Button>
+                </Info>
+            </Link>
         </Container>
     )
 }

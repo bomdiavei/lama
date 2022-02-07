@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom'
+import { animateScroll as scroll } from 'react-scroll'
 
 import { popularProducts } from '../data'
 import Product from "./Product"
@@ -11,10 +13,17 @@ const Container = styled.div`
 `
 
 const Products = () => {
+
+    const toggleHome = () => {
+        scroll.scrollToTop()
+    }
+
     return (
         <Container>
             {popularProducts.map(item => (
-                <Product item={item} key={item.id} />
+                <Link to="/product/1l2kj3h4g5f6d7s89" onClick={toggleHome}>
+                    <Product item={item} key={item.id} />
+                </Link>
             ))}
         </Container>
     )

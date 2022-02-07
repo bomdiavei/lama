@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 
 import styled from 'styled-components'
 import { Add, Remove } from '@material-ui/icons'
+import { Link } from 'react-router-dom'
 
 import { mobile } from '../responsive'
 
@@ -159,14 +160,16 @@ const Button = styled.button`
 `
 
 const Cart = () => {
-  return (
-      <Container>
-          <Navbar />
-          <Announcement />
+    return (
+        <Container>
+            <Navbar />
+            <Announcement />
             <Wrapper>
                 <Title>YOUR BAG</Title>
                 <Top>
-                    <TopButton>CONTINUE SHOPPING</TopButton>
+                    <Link to="/products">
+                        <TopButton>CONTINUE SHOPPING</TopButton>
+                    </Link>
                     <TopTexts>
                         <TopText>Shopping Bag (2)</TopText>
                         <TopText>Your Wishlist (0)</TopText>
@@ -177,7 +180,7 @@ const Cart = () => {
                     <Info>
                         <Product>
                             <ProductDetail>
-                                <Image src={ProductImg}/>
+                                <Image src={ProductImg} />
                                 <Details>
                                     <ProductName><b>Product:</b> JESSIE THUNDER SHOES</ProductName>
                                     <ProductId><b>ID:</b> 7562156124765156421834</ProductId>
@@ -197,7 +200,7 @@ const Cart = () => {
                         <Hr />
                         <Product>
                             <ProductDetail>
-                                <Image src={ProductImg2}/>
+                                <Image src={ProductImg2} />
                                 <Details>
                                     <ProductName><b>Product:</b> HAKURA T-SHIRT</ProductName>
                                     <ProductId><b>ID:</b> 7562156124765156421834</ProductId>
@@ -237,9 +240,9 @@ const Cart = () => {
                     </Summary>
                 </Bottom>
             </Wrapper>
-          <Footer />
-      </Container>
-  )
+            <Footer />
+        </Container>
+    )
 }
 
 export default Cart

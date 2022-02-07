@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons'
+import { Link } from 'react-router-dom'
 
 import { sliderItems } from '../data'
 import { mobile } from '../responsive'
@@ -97,17 +98,19 @@ const Slider = () => {
                 <ArrowLeftOutlined />
             </Arrow>
             <Wrapper slideIndex={slideIndex}>
-                {sliderItems.map( item => (
-                <Slide bg={item.bg} key={item.id}>
-                    <ImgContainer>
-                        <Image src={item.img} />
-                    </ImgContainer>
-                    <InfoContainer>
-                        <Title>{item.title}</Title>
-                        <Desc>{item.desc}</Desc>
-                        <Button>SHOW NOW</Button>
-                    </InfoContainer>
-                </Slide>
+                {sliderItems.map(item => (
+                    <Slide bg={item.bg} key={item.id}>
+                        <ImgContainer>
+                            <Image src={item.img} />
+                        </ImgContainer>
+                        <InfoContainer>
+                            <Title>{item.title}</Title>
+                            <Desc>{item.desc}</Desc>
+                            <Link to="/products">
+                                <Button>SHOW NOW</Button>
+                            </Link>
+                        </InfoContainer>
+                    </Slide>
                 ))}
             </Wrapper>
             <Arrow direction='right' onClick={() => handleClick("right")}>

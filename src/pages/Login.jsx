@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link as LinkR } from 'react-router-dom'
 
 import BackgroundImg from '../assets/images/login.jpeg'
 
@@ -67,8 +68,10 @@ const Login = () => {
           <Input placeholder="username" />
           <Input placeholder="password" />
           <Button>LOGIN</Button>
-          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <LinkR to="/register" style={{ color: "#000" }}>
+            <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
+            <Link>CREATE A NEW ACCOUNT</Link>
+          </LinkR>
         </Form>
       </Wrapper>
     </Container>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 
@@ -52,6 +53,7 @@ const Center = styled.div`
 
 const Logo = styled.h1`
     font-weight: bold;
+    text-decoration: none;
     ${mobile({ fontSize: "24px" })}
 `
 
@@ -81,14 +83,24 @@ const Navbar = () => {
                         <Search style={{ color: "gray", fontsize: 16 }} />
                     </SearchContainer>
                 </Left>
-                <Center><Logo>LAMA.</Logo></Center>
+                <Center>
+                    <Link to="/" style={{ color: "#000", textDecoration: 'none' }}>
+                        <Logo style={{ textDecoration: "none" }}>LAMA.</Logo>
+                    </Link>
+                </Center>
                 <Right>
-                    <MenuItem>REGISTER</MenuItem>
-                    <MenuItem>SIGN IN</MenuItem>
+                    <Link to="/register" style={{ color: "#000" }}>
+                        <MenuItem>REGISTER</MenuItem>
+                    </Link>
+                    <Link to="/login" style={{ color: "#000" }}>
+                        <MenuItem>SIGN IN</MenuItem>
+                    </Link>
                     <MenuItem>
-                        <Badge badgeContent={4} color="primary">
-                            <ShoppingCartOutlined color="action" />
-                        </Badge>
+                        <Link to="/cart">
+                            <Badge badgeContent={4} color="primary">
+                                <ShoppingCartOutlined color="action" />
+                            </Badge>
+                        </Link>
                     </MenuItem>
                 </Right>
             </Wrapper>
